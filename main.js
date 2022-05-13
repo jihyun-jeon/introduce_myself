@@ -1,3 +1,16 @@
+(function () {
+  var typed2 = new Typed("#hello", {
+    strings: ["", "welcome!"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    fadeOut: false,
+    smartBackspace: true,
+    cursorChar: "_",
+    loop: true,
+  });
+})();
+
+const helloEl = document.querySelector("#hello");
 const homeEl = document.querySelector("h1");
 const btn1 = document.querySelectorAll("button")[0];
 const btn2 = document.querySelectorAll("button")[1];
