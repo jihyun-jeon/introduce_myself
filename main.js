@@ -1,15 +1,3 @@
-(function () {
-  var typed2 = new Typed("#hello", {
-    strings: ["", "welcome!"],
-    typeSpeed: 100,
-    backSpeed: 100,
-    fadeOut: false,
-    smartBackspace: true,
-    cursorChar: "_",
-    loop: true,
-  });
-})();
-
 const helloEl = document.querySelector("#hello");
 const homeEl = document.querySelector("h1");
 const btn1 = document.querySelectorAll("button")[0];
@@ -33,6 +21,30 @@ btn2.addEventListener("click", (e) => {
 btn3.addEventListener("click", (e) => {
   page4.scrollIntoView({ behavior: "smooth", block: "start" });
 });
+
+// <타이핑 효과 구현>
+const txt = "안녕하세요 :)";
+let helloTxt = "";
+let i = 0;
+(() => {
+  setInterval(() => {
+    if (i >= txt.length) {
+      // i =8
+      helloTxt = helloTxt.slice(0, -1);
+      helloEl.innerHTML = helloTxt;
+      i += 1;
+      if (i > 16) {
+        i = 0;
+      }
+    }
+
+    if (i < txt.length) {
+      helloTxt += txt[i];
+      helloEl.innerHTML = helloTxt;
+      i += 1;
+    }
+  }, 400);
+})();
 
 // < 날씨정보 불러오기 >
 const locat = document.querySelector("#locat");
